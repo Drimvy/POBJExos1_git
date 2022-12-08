@@ -8,75 +8,74 @@ using namespace std;
 
 int main (void)
 {
-	int UserAnswer; //est-ce qu'il faut tous mettre en string?
-	string ValA, ValB;
+	char UserAnswer; //est-ce qu'il faut tous mettre en string?
+	int ValA, ValB;
 	// Variables pour test A et B
 	short i;
-	string ValB1;
-	string  ValB2;
+	int ValB1;
+	double  ValB2;
 
-	cout <<"Exercice 1 : Huber Christian " 
-										<< end1 ;
+	cout <<"Exercice 1 : Caroline Mieville " 
+										<< endl ;
 
 	cout << "Solution en C a trandformer en C++ "
-											<< end1;
+											<< endl;
 
 
 	do {
-		cout << "Test A ou B, Q pour Quitter "
-			<< end1;
+		cout << "Test A ou B, Q pour Quitter "<< endl << flush;
 
-		cout << "Test A ou B, Q pour Quitter "
-			<< end1;
-		scanf("%c%*c", &UserAnswer, 2);
+
+		cin >> UserAnswer;
 		
 		switch (UserAnswer) {
 			case 'A':
 			case 'a':
-				printf("TestA: entrez un nombre entre 1 et 9 \n");
-				scanf_s("%d%*c", &ValA);
+				cout << "TestA: entrez un nombre entre 1 et 9" << endl <<flush;
+				cin >> ValA;
 
 				if (ValA > 9)
 				{
 					ValA = 9;
-					printf("TestA: ValA limitee a 9 \n");
+					cout << "TestA: ValA limitee a 9 "<< endl;
 				}
 				if (ValA == 0)
 				{
 					ValA = 1;
-					printf("TestA: ValA forcee a 1 \n");
+					cout << "TestA: ValA forcee a 1 " << endl;
 				}
 				if (ValA > 0 )  
 				{
-					printf("%d ", ValA);
+					cout <<  ValA;
 					for (i=0; i < ValA ; i++)
 					{
-						printf ("*");
+						cout << "*";
 					}
-					printf("\n"); // saut de ligne
+					cout << endl; // saut de ligne
 				}
 				else 
 				{
-					printf("TestA: ValA est negatif ! \n");
+					cout << "TestA: ValA est negatif ! " << endl;
 				}
 			break;
 
 			case 'B':
 			case 'b':
-				printf("TestB: entrez une valeur entre 0 et 9 \n");
-				scanf_s("%d%*c", &ValB);
+				cout << "TestB: entrez une valeur entre 0 et 9 " << endl;
+				cin >> ValB;
 				
 				if (ValB >= 0 && ValB <=9 )
 				{
 					for (i=0; i < ValB; i++) { 
 						ValB1 = 100 + (10 * i);
 						ValB2 = ValB1 / 10000.0;
-						printf("TestB: i= %d ValB1 = %d ValB2 = %lf \n", i, ValB1, ValB2);
+						//cout.precision(5) ajouter les chiffre à vigule
+						cout << "TestB: i=" <<  i <<" ValB1 =" << ValB1 << " ValB2 =" << ValB2 << endl;
 					}
 				}
 				else
 				{
-					printf("TestB: ValB n'est pas entre 0 et 9 ! \n");
+					cout << "TestB: ValB n'est pas entre 0 et 9 ! " << endl;
 				}
 		break;
 
